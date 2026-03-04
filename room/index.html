@@ -8,8 +8,12 @@
 </head>
 <body>
    
-
-
+<a-assets>
+<img id="oak" src="../assets/textures/oak.png" alt="">
+<img id="fabric" src="../assets/textures/fabric.png" alt="">
+<img id="plank" src="../assets/textures/plank_flooring_02_ao_1k.png" alt="">
+<img id="linen" src="../assets/textures/rough_linen_ao_1k.png" alt="">
+</a-assets>
 
     <a-scene>
         
@@ -29,7 +33,7 @@
         </a-box>
 
 
-        <a-box id="floor" position="-3 0" depth="0.09" rotation="90 0 0" height="8" width="1" scale="10" color="#ad5e39">
+        <a-box id="floor" position="-3 0" depth="0.09" rotation="90 0 0" height="8" width="1" scale="10" material="src:#oak">
         </a-box>
 
 
@@ -37,33 +41,33 @@
 
 
 
-        <a-box id="bed" position="-1.213 0.5 -1.802" height="1" width="2" scale="3 0.9 4.07" color="#ffb5af">
+        <a-box id="bed" position="-1.213 0.5 -1.802" height="1" width="2" scale="3 0.9 4.07" color="#ffb5af" material="src:#fabric">
         </a-box>
 
        
 
-        <a-circle id="green-rug" position="-3.077 0.162 2.061" rotation="-90 90 0" scale="1.220 1.8 1" color="#96d35f">
+        <a-circle id="green-rug" position="-3.077 0.162 2.061" rotation="-90 90 0" scale="1.220 1.8 1" color="#96d35f" material="src:#fabric">
         </a-circle>
 
 
 
-        <a-circle id="red-rug" position="-1.904 0.208 2.066" rotation="-90 90 0" scale="0.618 0.458 1" color="#ff4013">
+        <a-circle id="red-rug" position="-1.904 0.208 2.066" rotation="-90 90 0" scale="0.618 0.458 1" color="#ff4013" material="src:#fabric">
         </a-circle>
 
 
 
-        <a-box id="side-table" position="1.397 0.782 1.113" scale="1.06 1.370 1.570" color="#7c2a00">
+        <a-box id="side-table" position="1.397 0.782 1.113" scale="1.06 1.370 1.570" color="#7c2a00" material="src:#oak">
         </a-box>
 
 
 
-        <a-box id="dresser" position="-7.212 1.657 -2.194" scale="-1.19 -3.182 3.118" color="#7c2a00">
+        <a-box id="dresser" position="-7.212 1.657 -2.194" scale="-1.19 -3.182 3.118" color="#7c2a00" material="src:#plank; roughness: 2; metalness: -1;">
         </a-box>
 
-         <a-box id="desk" position="-6.8 1.012 2.582" scale="-1.09 -1.822 2.428" color="#ffe4a8">
+         <a-box id="desk" position="-6.8 1.012 2.582" scale="-1.09 -1.822 2.428" color="#ffe4a8" material="src:#plank; roughness: 2; metalness: -1;"></a-box>>
         </a-box>
         
-        <a-plane id="yellow-poster" position="1.898 4.140 -1.701" rotation="0 -90" scale="3.7 3.4 1" color="#fff995">
+        <a-plane id="yellow-poster" position="1.898 4.140 -1.701" rotation="0 -90" scale="3.7 3.4 1" color="#fff995" material="src:#linen">
         </a-plane>
 
         <a-light position="-6.5 3.4 1" scale="1 1 1" type="point" light="" intensity="10" color="#ffb5af"></a-light>
