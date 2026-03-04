@@ -11,42 +11,48 @@
 <a-scene>
 
 <a-assets>
-<img id="brick_diff" src="../assets/src/textures/whitewashed_brick_diff_1k.png" alt="">
-<img id="brick_rough" src="../assets/src/textures/whitewashed_brick_rough_1k.png" alt="">
+<img id="brick" src="../assets/textures/white-brick.jpg" alt="">
+<img id="lava" src="../assets/textures/lava.jpg" alt="">
 </a-assets>
 
 
+
+
 <a-entity position="0 0 0">
-<a-sphere position="3 1.25 -5" radius="1.25" material="color: #fff; roughness: 0; metalness: 0.5; src: #brick_diff" shadow></a-sphere>
+<a-sphere position="3 1.25 -5" radius="1.25" material="color: #fff; roughness: 0; metalness: 0.5; src: #brick" shadow></a-sphere>
 
-<a-sphere position="0 1.25 -5" radius="1.25" material="color: #fff; roughness: 1; metalness: 0; src: #brick_diff" shadow></a-sphere>
+<a-sphere position="0 1.25 -5" radius="1.25" material="color: #fff; roughness: 1; metalness: 0; src: #brick" shadow></a-sphere>
 
-<a-sphere position="-3 1.25 -5" radius="1.25" material="color: #fff; roughness: 2; metalness: -1; src: #brick_diff" shadow></a-sphere>
+<a-sphere position="-3 1.25 -5" radius="1.25" material="color: #fff; roughness: 2; metalness: -1; src: #brick" shadow></a-sphere>
 
-<a-plane position="0 0 -4" rotation="-90 0 0" width="12" height="12" color="#007209"></a-plane>
+<a-plane position="0 0 -4" rotation="-90 0 0" width="12" height="12" color="#C5E0ED"></a-plane>
 </a-entity>
+
+
 
 <a-entity position="14 0 0">
-<a-sphere position="3 1.25 -5" radius="1.25" material="color: #FFE100; roughness: 0; metalness: 0.25; src: #brick_diff; roughnessMap: #brick_rough" shadow></a-sphere>
+<a-sphere position="3 1.25 -5" radius="1.25" material="color: #FFE100; roughness: 2; metalness: 0.25; src: #lava" shadow></a-sphere>
 
-<a-sphere position="0 1.25 -5" radius="1.25" material="color: #FFE100; roughness: 0; metalness: 0.25; src: #brick_diff; roughnessMap: #brick_rough" shadow></a-sphere>
+<a-sphere position="0 1.25 -5" radius="1.25" material="color: #FFE100; roughness: 0; metalness: 0.5; src: #lava" shadow></a-sphere>
 
-<a-sphere position="-3 1.25 -5" radius="1.25" material="color: #FFE100; roughness: 0; metalness: 0.25; src: #brick_diff; roughnessMap: #brick_rough" shadow></a-sphere>
+<a-sphere position="-3 1.25 -5" radius="1.25" material="color: #FFE100; roughness: 0; metalness: 0.8; src: #lava" shadow></a-sphere>
 
-<a-plane position="0 0 -4" rotation="-90 0 0" width="12" height="12" color="#007209"></a-plane>
+<a-plane position="0 0 -4" rotation="-90 0 0" width="12" height="12" color="#C5E0ED"></a-plane>
 </a-entity>
+
+
 
 <a-entity position="-14 0 0">
-<a-sphere position="3 1.25 -5" radius="1.25" color="#FA00FF"></a-sphere>
+<a-sphere position="3 1.25 -5" radius="1.25" color="#DC5F99"></a-sphere>
 
-<a-sphere position="0 1.25 -5" radius="1.25" color="#FA00FF"></a-sphere>
+<a-sphere position="0 1.25 -5" radius="1.25" color="#22D4C7"></a-sphere>
 
-<a-sphere position="-3 1.25 -5" radius="1.25" color="#FA00FF"></a-sphere>
+<a-sphere position="-3 1.25 -5" radius="1.25" color="#E1877E"></a-sphere>
 
-<a-plane position="0 0 -4" rotation="-90 0 0" width="12" height="12" color="#007209"></a-plane>
+<a-plane position="0 0 -4" rotation="-90 0 0" width="12" height="12" color="#C5E0ED"></a-plane>
 </a-entity>
 
-<a-entity light="intensity: 0.5; type:ambient"></a-entity>
+<a-entity light="intensity: 1.0; type:ambient"></a-entity>
 <a-entity light="intensity: 7; type: point" position="1.5 1.7 -2.5"
 
 </a-scene>
