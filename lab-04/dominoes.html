@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dominoes</title>
        <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
-       <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.4/dist/aframe-physics-system.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.4/dist/aframe-physics-system.min.js"></script> -->
 
 </head>
 <body>
@@ -14,23 +14,63 @@
 
         <a-entity rotation="0 170 0" position="-7 0 -19">
 
-            <a-entity>
-
-                <a-box id="floor" position="0 0 -4" rotation="-90 0 0" width="40" height="40" depth="0.1" color="#7BC8A4" static-body="shape: box;"></a-box>
+              <a-box id="floor" position="0 0 -4" rotation="-90 0 0" width="40" height="40" depth="0.1" color="#7BC8A4" static-body="shape: box;"></a-box>
                  
+
+            <a-entity id="my-dominos">
 
       
                 
                 <a-box id="domino 1" position="-12.83755 0.8 -12.47428" rotation="10 0 0" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" shape="shape: box; halfExtents: 1 1 1;"></a-box>
 
-                <a-box position="-12.72967 0.8 -11.86243" rotation="10 0 0" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" ></a-box>
+                <a-box position="-12.72967 0.8 -11.86243" rotation="0 0 0" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" ></a-box>
 
-               
+                <a-box position="-12.60829 0.8 -11.17406" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;"></a-box>
 
+                <a-box position="-12.46055 0.8 -10.46282" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;"></a-box>
+
+                <a-box position="-12.29298 0.8 -9.51249" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;"></a-box>
+
+                <a-box position="-12.13264 0.8 -8.60314" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;"></a-box>
+
+                <a-box position="-11.98072 0.8 -7.74153" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 19.09095373375903 0"></a-box>
+
+                <a-box position="-11.52212 0.8 -6.86445" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 33.69564793164371 0"></a-box>
+
+                <a-box position="-10.98139 0.8 -6.23237" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 44.47069222687397 0"></a-box>
+
+                <a-box position="-10.16614 0.8 -5.98881" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 44.47069222687397 0"></a-box>
+
+                <a-box position="-9.40672 0.8 -5.74627" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 59.48619716386746 0"></a-box>
+
+                <a-box position="-8.6763 0.8 -5.86372" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 74.39169420419583 0"></a-box>
+
+                <a-box position="-7.91816 0.8 -5.9974" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 86.59053862032619 0"></a-box>
+
+                <a-box position="-7.19766 0.8 -6.12444" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 102.05753429988275 0"></a-box>
+
+                <a-box position="-6.49827 0.8 -6.24776" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 102.05753429988275 0"></a-box>
+
+                <a-box position="-5.80812 0.8 -6.36945" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 102.05753429988275 0"></a-box>
+
+                <a-box position="-5.02686 0.8 -6.06773" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 86.42438085973824 0"></a-box>
+
+                <a-box position="-4.41862 0.8 -5.67628" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 71.00723250835804 0"></a-box>
+
+                <a-box position="-4.03255 0.8 -4.75182" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 50.738850505605186 0"></a-box>
+
+                <a-box position="-3.90845 0.8 -4.04801" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 31.36943928341257 0"></a-box>
+
+                <a-box position="-3.75014 0.8 -3.15016" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 14.30962093339231 0"></a-box>
+
+                <a-box position="-3.63171 0.8 -2.47854" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 14.30962093339231 0"></a-box>
+
+                <a-box position="-3.4899 0.8 -1.6743" width="1" height="1.5" depth="0.1" dynamic-body="shape: square; mass: 2;" rotation="0 14.30962093339231 0"></a-box>
 
 
 
             </a-entity>
+            
 
 
 
