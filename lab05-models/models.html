@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Models to A-Frame</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+<body>
+    
+
+
+    <a-scene>
+
+        <a-assets>
+            <a-asset-item id="3d" src="Models gltf/3d-text.gltf"></a-asset-item>
+            <a-asset-item id="smile" src="Models gltf/smile-circle-svgrepo-com.gltf"></a-asset-item>
+            <a-asset-item id="pixel" src="Models gltf/pixel-3d-test.gltf"></a-asset-item>
+            
+        </a-assets>
+
+        <a-gltf-model src="#3d" position="-4.81942 2.635 -11.6739" scale="0.05 0.05 0.05" gltf-model="Models gltf/3d-text.gltf" rotation="0 -45.7 0"></a-gltf-model>
+
+        <a-gltf-model src="#smile" position="4.27598 2.7318 -11.51142" scale="0.02 0.02 0.02" gltf-model="Models gltf/smile-circle-svgrepo-com.gltf" rotation="0 -45 0"></a-gltf-model>
+
+        <a-gltf-model src="#pixel" position="0.09408 3.387 -11.67041" scale="0.05 0.05 0.05" gltf-model="Models gltf/pixel-3d-test.gltf" rotation="0 -45 0"></a-gltf-model>
+
+
+    
+        <a-plane position="0 3.76016 -11.823" width="4" height="4" color="#fffdd0" geometry="height: 7.4; width: 15.2"></a-plane>
+        
+        <a-light position="-0.32775 3.387 -8.87366" type="spot" intensity="3"></a-light>
+        <a-light position="-5.87678 3.387 -8.87366" type="spot" intensity="3"></a-light>
+        <a-light position="4.07465 2.7752 -8.87366" type="spot" intensity="3"></a-light>
+        <a-light type="ambient" light="" intensity="3" position=""></a-light>
+        <a-sky color="#333"></a-sky>
+
+    </a-scene>
+
+
+    
+
+
+
+</body>
+</html>
