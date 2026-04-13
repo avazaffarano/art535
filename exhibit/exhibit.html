@@ -12,7 +12,10 @@
     
     <a-scene>
 
-        <assets></assets>
+        <assets>
+            <a-asset-item id="pixel" src="models-gltf/pixel-3d-test.gltf"></a-asset-item>
+            <a-asset-item id="pixel" src="models-gltf/pixel-girl.gltf"></a-asset-item>
+        </assets>
 
 
        <a-entity id="player" >
@@ -23,31 +26,46 @@
             <a-entity id="right-hand" raycaster="objects: .floor" oculus-touch-controls="hand: right" blink-controls></a-entity>
         </a-entity>
 
-        <a-box id="entrance wall left" position="-2 1.5 -5" height="3" width="2" depth="0.09" rotation="0 90 0" color="blue"></a-box>
+
+        <a-gltf-model src="#pixel" position="8.35744 1.66342 -14.44296" scale="0.03 0.03 0.03" gltf-model="models-gltf/pixel-3d-test.gltf" rotation="0 160.3244772757118 0"></a-gltf-model>
+
+        <a-gltf-model src="#pixel-girl" position="10.88657 1.66342 -15.60552" scale="0.03 0.03 0.03" gltf-model="models-gltf/pixel-girl.gltf" rotation="0 161.40507567732857 0"></a-gltf-model>
+
+
+
+
+        <a-light type="ambient" light="" intensity="0.5" position=""></a-light>
+        <a-light position="4.65463 5.96143 -17.72212" type="spot" intensity="3" rotation="-89.30000000000001 0 0"></a-light>
+        <a-light position="0.54231 2.54961 -1.34156" type="spot" intensity="3"></a-light>
+
+
+        
+
+        <a-box id="entrance wall left" position="-2 1.5 -5" height="3" width="2" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
     
-        <a-box id="entrance wall right" position="1.5 1.5 -5" height="3" width="2" depth="0.09" rotation="0 90 0" color="blue"></a-box>
+        <a-box id="entrance wall right" position="1.5 1.5 -5" height="3" width="2" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
 
-        <a-box id="portrait wall" position="-0.992 1.5 -7.74" height="3" width="4" depth="0.09" rotation="0 -120 0" color="blue"></a-box>
+        <a-box id="portrait wall" position="-0.992 1.5 -7.74" height="3" width="4" depth="0.09" rotation="0 -120 0" color=#ffffe3></a-box>
 
-        <a-box id="logo wall" position="1.26 1.5 -9.45" height="3" width="2.6" depth="0.09" rotation="0 0 0" color="blue"></a-box>
+        <a-box id="logo wall" position="1.26 1.5 -9.45" height="3" width="2.6" depth="0.09" rotation="0 0 0" color=#ffffe3></a-box>
 
-        <a-box id="thesis wall" position="3.95 1.5 -6" height="3" width="5" depth="0.09" rotation="0 0 0" color="blue"></a-box>
+        <a-box id="thesis wall" position="3.95 1.5 -6" height="3" width="5" depth="0.09" rotation="0 0 0" color=#ffffe3></a-box>
 
-        <a-box id="large wall 1" position="6.4 1.5 -9.68" height="3" width="7.45" depth="0.09" rotation="0 90 0" color="blue"></a-box>
+        <a-box id="large wall 1" position="6.4 1.5 -9.68" height="3" width="7.45" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
 
-        <a-box id="icon work wall" position="2.518 1.5 -14.20" height="3" width="9.58" depth="0.09" rotation="0 90 0" color="blue"></a-box>
+        <a-box id="icon work wall" position="2.518 1.5 -14.20" height="3" width="9.58" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
 
-        <a-box id="philosophy wall" position="9.736 1.5 -14.91" height="3" width="7.34" depth="0.09" rotation="0 24.468 0" color="blue"></a-box>
+        <a-box id="philosophy wall" position="9.736 1.5 -14.91" height="3" width="7.34" depth="0.09" rotation="0 24.468 0" color=#ffffe3></a-box>
 
-        <a-box id="interface wall 1" position="13.027 1.5 -20.13" height="3" width="7.38" depth="0.09" rotation="0 90 0" color="blue"></a-box>
+        <a-box id="interface wall 1" position="13.027 1.5 -20.13" height="3" width="7.38" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
 
-        <a-box id="north wall" position="4.371 1.5 -23.85" height="3" width="17.3" depth="0.09" rotation="0 0 0" color="blue"></a-box>
+        <a-box id="north wall" position="4.371 1.5 -23.85" height="3" width="17.3" depth="0.09" rotation="0 0 0" color=#ffffe3></a-box>
 
-        <a-box id="long room wall back" position="-4.274 1.5 -19.80" height="3" width="8.140" depth="0.09" rotation="0 90 0" color="blue"></a-box>
+        <a-box id="long room wall back" position="-4.274 1.5 -19.80" height="3" width="8.140" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
 
-        <a-box id="room wall south" position="-0.888 1.5 -15.73" height="3" width="6.8" depth="0.09" rotation="0 0 0" color="blue"></a-box>
+        <a-box id="room wall south" position="-0.888 1.5 -15.73" height="3" width="6.8" depth="0.09" rotation="0 0 0" color=#ffffe3></a-box>
 
-        <a-box id="doorway wall" position="2.518 1.5 -22.37" height="3" width="2.86" depth="0.09" rotation="0 90 0" color="blue"></a-box>
+        <a-box id="doorway wall" position="2.518 1.5 -22.37" height="3" width="2.86" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
 
         <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0"></a-plane>
 
