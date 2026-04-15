@@ -19,6 +19,8 @@
             <img id="portrait" src="../exhibit/exhibit-assets/portrait.png">
             <img id="thesis" src="../exhibit/exhibit-assets/thesis.png">
             <img id="who+apple" src="../exhibit/exhibit-assets/who+apple.png">
+            <img id="philosophy" src="../exhibit/exhibit-assets/philosophy.png">
+            <img id="concrete" src="../exhibit/exhibit-assets/painted_concrete_02_nor_gl_1k.png">
         </assets>
 
 
@@ -31,7 +33,7 @@
         </a-entity>
 
        
-        <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0"></a-plane>
+        <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0" material="src: #concrete"></a-plane>
 
         <a-plane material="color: #ffffe3" src="#logo" position="1.30762 1.51529 -9.40008" scale="2.6 3 2.6"></a-plane>
 
@@ -40,15 +42,24 @@
         <a-plane material="color: #ffffe3" src="#thesis" position="3.97538 1.39677 -6.07515" scale="4.5 3 2.6" rotation="0 180 0"></a-plane>
 
         <a-plane material="color: #ffffe3" src="#who+apple" position="6.32903 1.51041 -9.70979" scale="7.5 3 7.5" rotation="0 -90 0"></a-plane>
-        
+
+        <a-plane material="color: #ffffe3" src="#philosophy" position="9.72804 1.51293 -14.98256" scale="7.5 3 7.5" rotation="0 -155.54944701109156 0"></a-plane>
+
+        <a-box id="ceiling-1" position="-0.24221 3.04726 -5.04019" height="3" width="2" depth="0.09" rotation="-90 0 0" color="grey" geometry="height: 2.05; width: 3.6"></a-box>
+
+        <a-box id="ceiling-2" position="4.44147 3.01447 -14.94049" height="3" width="2" depth="0.09" rotation="-90 0 0" color="grey" geometry="depth: 0.07; height: 17.84; width: 4.02"></a-box>
+
+        <a-box id="ceiling-3" position="9.86411 3.01966 -18.618" height="3" width="2" depth="0.09" rotation="-90 0 0" color="grey" geometry="depth: 0.07; height: 10.57; width: 6.84"></a-box>
+
+        <a-box id="ceiling-4" position="-0.96432 3.01966 -19.79047" height="3" width="2" depth="0.09" rotation="-90 0 0" color="grey" geometry="depth: 0.07; height: 8.37; width: 6.84"></a-box>
+
+        <a-box id="ceiling-5" position="0.20568 3.04726 -7.91415" height="3" width="2" depth="0.09" rotation="-90 0 0" color="grey" geometry="height: 3.71; width: 4.49"></a-box>
 
 
 
+       <a-gltf-model src="#pixel-girl" position="11.61788 1.66342 -15.91489" scale="0.015 0.015 0.015" gltf-model="models-gltf/pixel-girl.gltf" rotation="0 161.40507567732857 0"></a-gltf-model>
 
-
-        <a-gltf-model src="#pixel" position="8.35744 1.66342 -14.44296" scale="0.03 0.03 0.03" gltf-model="models-gltf/pixel-3d-test.gltf" rotation="0 160.3244772757118 0"></a-gltf-model>
-
-        <a-gltf-model src="#pixel-girl" position="10.88657 1.66342 -15.60552" scale="0.03 0.03 0.03" gltf-model="models-gltf/pixel-girl.gltf" rotation="0 161.40507567732857 0"></a-gltf-model>
+        <a-gltf-model src="#pixel" position="10.39546 1.66342 -15.34757" scale="0.015 0.015 0.015" gltf-model="models-gltf/pixel-3d-test.gltf" rotation="0 160.3244772757118 0"></a-gltf-model>
 
 
 
