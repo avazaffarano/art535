@@ -15,16 +15,35 @@
         <assets>
             <a-asset-item id="pixel" src="models-gltf/pixel-3d-test.gltf"></a-asset-item>
             <a-asset-item id="pixel" src="models-gltf/pixel-girl.gltf"></a-asset-item>
+            <img id="logo" src="../exhibit/exhibit-assets/logo-wall.png">
+            <img id="portrait" src="../exhibit/exhibit-assets/portrait.png">
+            <img id="thesis" src="../exhibit/exhibit-assets/thesis.png">
+            <img id="who+apple" src="../exhibit/exhibit-assets/who+apple.png">
         </assets>
 
 
        <a-entity id="player" >
             <!-- camera -->
-            <a-entity id="camera" camera wasd-controls look-controls></a-entity>
+            <a-entity id="camera" position="0 1.6 0" camera wasd-controls look-controls></a-entity>
             <!-- hand controls -->
             <a-entity id="left-hand" raycaster="objects: .floor" oculus-touch-controls="hand: left" blink-controls></a-entity>
             <a-entity id="right-hand" raycaster="objects: .floor" oculus-touch-controls="hand: right" blink-controls></a-entity>
         </a-entity>
+
+       
+        <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0"></a-plane>
+
+        <a-plane material="color: #ffffe3" src="#logo" position="1.30762 1.51529 -9.40008" scale="2.6 3 2.6"></a-plane>
+
+        <a-plane material="color: #ffffe3" src="#portrait" position="-0.98774 1.50309 -7.65249" scale="4 3 4" rotation="0 59.99999999999999 0"></a-plane>
+
+        <a-plane material="color: #ffffe3" src="#thesis" position="3.97538 1.39677 -6.07515" scale="4.5 3 2.6" rotation="0 180 0"></a-plane>
+
+        <a-plane material="color: #ffffe3" src="#who+apple" position="6.32903 1.51041 -9.70979" scale="7.5 3 7.5" rotation="0 -90 0"></a-plane>
+        
+
+
+
 
 
         <a-gltf-model src="#pixel" position="8.35744 1.66342 -14.44296" scale="0.03 0.03 0.03" gltf-model="models-gltf/pixel-3d-test.gltf" rotation="0 160.3244772757118 0"></a-gltf-model>
@@ -34,9 +53,8 @@
 
 
 
-        <a-light type="ambient" light="" intensity="0.5" position=""></a-light>
-        <a-light position="4.65463 5.96143 -17.72212" type="spot" intensity="3" rotation="-89.30000000000001 0 0"></a-light>
-        <a-light position="0.54231 2.54961 -1.34156" type="spot" intensity="3"></a-light>
+        <a-light type="ambient" intensity="1" position=""></a-light>
+        
 
 
         
@@ -69,7 +87,7 @@
 
         <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0"></a-plane>
 
-       
+       <a-sky color="#222222"></a-sky>
 
 
     </a-scene>
