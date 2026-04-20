@@ -15,12 +15,21 @@
         <assets>
             <a-asset-item id="pixel" src="models-gltf/pixel-3d-test.gltf"></a-asset-item>
             <a-asset-item id="pixel" src="models-gltf/pixel-girl.gltf"></a-asset-item>
+            <a-asset-item id="table" src="models-gltf/table_model/scene.gltf"></a-asset-item>
+            <a-asset-item id="paper-stack" src="models-gltf/office_paper/scene.gltf"></a-asset-item>
+            <a-asset-item id="pencil" src="models-gltf/low_poly_pencil/scene.gltf"></a-asset-item>
+
             <img id="logo" src="../exhibit/exhibit-assets/logo-wall.png">
             <img id="portrait" src="../exhibit/exhibit-assets/portrait.png">
             <img id="thesis" src="../exhibit/exhibit-assets/thesis.png">
             <img id="who+apple" src="../exhibit/exhibit-assets/who+apple.png">
             <img id="philosophy" src="../exhibit/exhibit-assets/philosophy.png">
-            <img id="concrete" src="../exhibit/exhibit-assets/painted_concrete_02_nor_gl_1k.png">
+            <img id="concrete" src="../exhibit/exhibit-assets/painted_concrete_02_diff_1k.png">
+            <img id="icons" src="../exhibit/exhibit-assets/icon-mural.png">
+            <img id="icons-2" src="../exhibit/exhibit-assets/icon-mural-2.png">
+            <img id="face-1" src="../exhibit/exhibit-assets/face-card_Simplicity in Design.png">
+            <img id="face-2" src="../exhibit/exhibit-assets/face-card-10.png">
+            <a-asset-item id="pixel" src="up"></a-asset-item>
         </assets>
 
 
@@ -45,15 +54,32 @@
 
         <a-plane material="color: #ffffe3" src="#philosophy" position="9.72804 1.51293 -14.98256" scale="7.5 3 7.5" rotation="0 -155.54944701109156 0"></a-plane>
 
-        <a-box id="ceiling-1" position="-0.24221 3.04726 -5.04019" height="3" width="2" depth="0.09" rotation="-90 0 0" color="grey" geometry="height: 2.05; width: 3.6"></a-box>
+        <a-plane class="floor" static-body="shape:plane" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0" material="color:white; src: #concrete">
+        </a-plane>
 
-        <a-box id="ceiling-2" position="4.44147 3.01447 -14.94049" height="3" width="2" depth="0.09" rotation="-90 0 0" color="grey" geometry="depth: 0.07; height: 17.84; width: 4.02"></a-box>
+        <a-plane material="color: #ffffe3" src="#icons" position="2.58832 1.49585 -14.21822" scale="7.5 3 7.5" rotation="0 90 0" geometry="width: 1.27"></a-plane>
 
-        <a-box id="ceiling-3" position="9.86411 3.01966 -18.618" height="3" width="2" depth="0.09" rotation="-90 0 0" color="grey" geometry="depth: 0.07; height: 10.57; width: 6.84"></a-box>
+        <a-plane material="color: #ffffe3" src="#icons-2" position="2.59171 1.49457 -22.37474" scale="7.5 3 7.5" rotation="0 90 0" geometry="width: 0.38"></a-plane>
 
-        <a-box id="ceiling-4" position="-0.96432 3.01966 -19.79047" height="3" width="2" depth="0.09" rotation="-90 0 0" color="grey" geometry="depth: 0.07; height: 8.37; width: 6.84"></a-box>
+        <a-plane material="color: #ffffe3" src="#face-1" position="4.02919 1.49457 -23.78191" scale="7.5 3 7.5" geometry="width: 0.38"></a-plane>
 
-        <a-box id="ceiling-5" position="0.20568 3.04726 -7.91415" height="3" width="2" depth="0.09" rotation="-90 0 0" color="grey" geometry="height: 3.71; width: 4.49"></a-box>
+        <a-plane material="color: #ffffe3" src="#face-2" position="11.52593 1.49457 -23.78191" scale="7.5 3 7.5" geometry="width: 0.38"></a-plane>
+
+
+
+
+
+        
+
+        <a-box id="ceiling-1" position="-0.24221 3.04726 -5.04019" height="3" width="2" depth="0.09" rotation="-90 0 0" color=#ffffe3 geometry="height: 2.05; width: 3.6"></a-box>
+
+        <a-box id="ceiling-2" position="4.44147 3.01447 -14.94049" height="3" width="2" depth="0.09" rotation="-90 0 0" color=#ffffe3 geometry="depth: 0.07; height: 17.84; width: 4.02"></a-box>
+
+        <a-box id="ceiling-3" position="9.86411 3.01966 -18.618" height="3" width="2" depth="0.09" rotation="-90 0 0" color=#ffffe3 geometry="depth: 0.07; height: 10.57; width: 6.84"></a-box>
+
+        <a-box id="ceiling-4" position="-0.96432 3.01966 -19.79047" height="3" width="2" depth="0.09" rotation="-90 0 0" color=#ffffe3 geometry="depth: 0.07; height: 8.37; width: 6.84"></a-box>
+
+        <a-box id="ceiling-5" position="0.20568 3.04726 -7.91415" height="3" width="2" depth="0.09" rotation="-90 0 0" color=#ffffe3 geometry="height: 3.71; width: 4.49"></a-box>
 
 
 
@@ -61,11 +87,32 @@
 
         <a-gltf-model src="#pixel" position="10.39546 1.66342 -15.34757" scale="0.015 0.015 0.015" gltf-model="models-gltf/pixel-3d-test.gltf" rotation="0 160.3244772757118 0"></a-gltf-model>
 
+        <a-gltf-model src="#table" position="6.26603 0.31967 -21.77644" gltf-model="models-gltf/table_model/scene.gltf" rotation="0 89.634 0"></a-gltf-model>
+
+        <a-gltf-model src="#paper-stack" position="2.67882 0.31563 -22.30279" gltf-model="models-gltf/office_paper/scene.gltf" rotation="0 12.33 0"></a-gltf-model>
+
+        <a-gltf-model src="#pencil" position="5.68973 0.89105 -21.61982" gltf-model="models-gltf/low_poly_pencil/scene.gltf" rotation="0 12.33 0"></a-gltf-model>
+
+        <a-gltf-model src="#table" position="8.54154 0.31967 -21.77644" gltf-model="models-gltf/table_model/scene.gltf" rotation="0 89.634 0"></a-gltf-model>
+
+
+      
 
 
 
-        <a-light type="ambient" intensity="1" position=""></a-light>
-        
+
+
+
+        <a-light type="ambient" intensity="1" position="4.66969 3.28035 -10.14982"></a-light>
+        <a-light type="point" intensity="1" position="4.97204 1.51449 -7.82214" light="color: #fff2d5; intensity: 1.15"></a-light>
+        <a-light type="point" intensity="1" position="3.94831 1.51449 -7.82214" light="color: #fff2d5; intensity: 1.15"></a-light>
+        <a-light type="point" intensity="1" position="0.99488 1.88234 -8.57402" light="color: #fff2d5; intensity: 1.59"></a-light>
+        <a-light type="point" intensity="1" position="-0.76273 1.85537 -6.72041" light="color: #fefcdd; intensity: 3.49"></a-light>
+        <a-light type="point" intensity="1" position="5.30478 1.79463 -12.23278" light="color: #fff2d5; intensity: 1.48"></a-light>
+        <a-light type="point" intensity="1" position="3.54874 1.74602 -15.10691" light="color: #fff2d5; intensity: 1.48"></a-light>
+        <a-light type="point" intensity="1" position="10.52312 1.79463 -16.21767" light="color: #fff2d5; intensity: 1.48"></a-light>
+        <a-light type="point" intensity="1" position="7.6491 1.65034 -15.29554" light="color: #fff2d5; intensity: 1.48"></a-light>
+
 
 
         
@@ -96,7 +143,7 @@
 
         <a-box id="doorway wall" position="2.518 1.5 -22.37" height="3" width="2.86" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
 
-        <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0"></a-plane>
+        <!-- <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0" color="#A9A9A9"></a-plane> -->
 
        <a-sky color="#222222"></a-sky>
 

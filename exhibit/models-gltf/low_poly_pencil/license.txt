@@ -1,0 +1,8 @@
+Model Information:
+* title:	Low Poly Pencil
+* source:	https://sketchfab.com/3d-models/low-poly-pencil-29b83497785a4f17847e6b71276cc1c3
+* author:	bihanz (https://sketchfab.com/bihanz)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
