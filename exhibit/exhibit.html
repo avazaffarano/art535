@@ -18,6 +18,8 @@
             <a-asset-item id="table" src="models-gltf/table_model/scene.gltf"></a-asset-item>
             <a-asset-item id="paper-stack" src="models-gltf/office_paper/scene.gltf"></a-asset-item>
             <a-asset-item id="pencil" src="models-gltf/low_poly_pencil/scene.gltf"></a-asset-item>
+            <a-asset-item id="bench" src="models-gltf/gallery_bench/scene.gltf"></a-asset-item>
+            
 
             <img id="logo" src="../exhibit/exhibit-assets/logo-wall.png">
             <img id="portrait" src="../exhibit/exhibit-assets/portrait.png">
@@ -29,6 +31,9 @@
             <img id="icons-2" src="../exhibit/exhibit-assets/icon-mural-2.png">
             <img id="face-1" src="../exhibit/exhibit-assets/face-card_Simplicity in Design.png">
             <img id="face-2" src="../exhibit/exhibit-assets/face-card-10.png">
+            <img id="grab-a-grid" src="../exhibit/exhibit-assets/grab-a-grid.png">
+            <img id="how-to" src="../exhibit/exhibit-assets/how-to.png">
+
             <a-asset-item id="pixel" src="up"></a-asset-item>
         </assets>
 
@@ -57,13 +62,17 @@
         <a-plane class="floor" static-body="shape:plane" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0" material="color:white; src: #concrete">
         </a-plane>
 
-        <a-plane material="color: #ffffe3" src="#icons" position="2.58832 1.49585 -14.21822" scale="7.5 3 7.5" rotation="0 90 0" geometry="width: 1.27"></a-plane>
+        <a-plane material="color: #ffffe3" src="#icons" position="2.56468 1.49585 -14.21822" scale="7.5 3 7.5" rotation="0 90 0" geometry="width: 1.27"></a-plane>
 
         <a-plane material="color: #ffffe3" src="#icons-2" position="2.59171 1.49457 -22.37474" scale="7.5 3 7.5" rotation="0 90 0" geometry="width: 0.38"></a-plane>
 
         <a-plane material="color: #ffffe3" src="#face-1" position="4.02919 1.49457 -23.78191" scale="7.5 3 7.5" geometry="width: 0.38"></a-plane>
 
         <a-plane material="color: #ffffe3" src="#face-2" position="11.52593 1.49457 -23.78191" scale="7.5 3 7.5" geometry="width: 0.38"></a-plane>
+
+        <a-plane material="color: #ffffe3" src="#grab-a-grid" position="7.70271 1.49457 -23.7964" scale="7.5 3 7.5" geometry="width: 0.6"></a-plane>
+
+        <a-plane material="color: #ffffe3" src="#how-to" position="12.96098 1.49457 -20.13302" scale="7.5 3 7.5" geometry="width: 0.98" rotation="0 -90 0"></a-plane>
 
 
 
@@ -81,7 +90,7 @@
 
         <a-box id="ceiling-5" position="0.20568 3.04726 -7.91415" height="3" width="2" depth="0.09" rotation="-90 0 0" color=#ffffe3 geometry="height: 3.71; width: 4.49"></a-box>
 
-
+        <a-box id="doorway wall-2" position="2.25796 2.86592 -19.99052" height="3" width="2.86" depth="0.09" rotation="0 90 0" color="#ffffe3" geometry="depth: 0.6; height: 0.28; width: 2.04"></a-box>  
 
        <a-gltf-model src="#pixel-girl" position="11.61788 1.66342 -15.91489" scale="0.015 0.015 0.015" gltf-model="models-gltf/pixel-girl.gltf" rotation="0 161.40507567732857 0"></a-gltf-model>
 
@@ -91,9 +100,16 @@
 
         <a-gltf-model src="#paper-stack" position="2.67882 0.31563 -22.30279" gltf-model="models-gltf/office_paper/scene.gltf" rotation="0 12.33 0"></a-gltf-model>
 
+        <a-gltf-model src="#paper-stack" position="9.27306 0.31563 -25.2814" gltf-model="models-gltf/office_paper/scene.gltf" rotation="0 -83.17 0"></a-gltf-model>
+
         <a-gltf-model src="#pencil" position="5.68973 0.89105 -21.61982" gltf-model="models-gltf/low_poly_pencil/scene.gltf" rotation="0 12.33 0"></a-gltf-model>
 
-        <a-gltf-model src="#table" position="8.54154 0.31967 -21.77644" gltf-model="models-gltf/table_model/scene.gltf" rotation="0 89.634 0"></a-gltf-model>
+        <a-gltf-model src="#table" position="8.17192 0.31967 -21.76309" gltf-model="models-gltf/table_model/scene.gltf" rotation="0 89.634 0"></a-gltf-model>
+
+        <a-gltf-model src="#table" position="4.36762 0.31967 -21.78786" gltf-model="models-gltf/table_model/scene.gltf" rotation="0 89.634 0"></a-gltf-model>
+
+       <!-- <a-gltf-model src="#bench" position="8.66294 0.21525 -16.42923" gltf-model="models-gltf/gallery_bench/scene.gltf" rotation="0 25.5040 0" scale="1.5 1.5 1.5"></a-gltf-model> -->
+
 
 
       
@@ -129,7 +145,7 @@
 
         <a-box id="large wall 1" position="6.4 1.5 -9.68" height="3" width="7.45" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
 
-        <a-box id="icon work wall" position="2.518 1.5 -14.20" height="3" width="9.58" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
+        <a-box id="icon work wall" position="2.25938 1.5 -14.2" height="3" width="9.58" depth="0.09" rotation="0 90 0" color="#ffffe3" geometry="depth: 0.6"></a-box>
 
         <a-box id="philosophy wall" position="9.736 1.5 -14.91" height="3" width="7.34" depth="0.09" rotation="0 24.468 0" color=#ffffe3></a-box>
 
@@ -141,7 +157,7 @@
 
         <a-box id="room wall south" position="-0.888 1.5 -15.73" height="3" width="6.8" depth="0.09" rotation="0 0 0" color=#ffffe3></a-box>
 
-        <a-box id="doorway wall" position="2.518 1.5 -22.37" height="3" width="2.86" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
+        <a-box id="doorway wall" position="2.26389 1.5 -22.37" height="3" width="2.86" depth="0.09" rotation="0 90 0" color="#ffffe3" geometry="depth: 0.6"></a-box>
 
         <!-- <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0" color="#A9A9A9"></a-plane> -->
 

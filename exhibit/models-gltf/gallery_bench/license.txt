@@ -1,0 +1,11 @@
+Model Information:
+* title:	Gallery Bench
+* source:	https://sketchfab.com/3d-models/gallery-bench-20afac373c45406c96f5a30d2e803291
+* author:	dayoung.ko (https://sketchfab.com/dayoung.ko)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Gallery Bench" (https://sketchfab.com/3d-models/gallery-bench-20afac373c45406c96f5a30d2e803291) by dayoung.ko (https://sketchfab.com/dayoung.ko) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
