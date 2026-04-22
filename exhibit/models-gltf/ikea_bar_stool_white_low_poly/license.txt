@@ -1,0 +1,11 @@
+Model Information:
+* title:	IKEA Bar stool, white (Low Poly)
+* source:	https://sketchfab.com/3d-models/ikea-bar-stool-white-low-poly-3ff476d0f462401eb14848e8b9c504b5
+* author:	Wicked_Vixx (https://sketchfab.com/tylukex)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "IKEA Bar stool, white (Low Poly)" (https://sketchfab.com/3d-models/ikea-bar-stool-white-low-poly-3ff476d0f462401eb14848e8b9c504b5) by Wicked_Vixx (https://sketchfab.com/tylukex) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
