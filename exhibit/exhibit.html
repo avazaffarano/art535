@@ -20,6 +20,7 @@
             <a-asset-item id="pencil" src="models-gltf/low_poly_pencil/scene.gltf"></a-asset-item>
             <a-asset-item id="bench" src="models-gltf/gallery_bench/scene.gltf"></a-asset-item>
             <a-asset-item id="stool" src="models-gltf/stool/scene.gltf"></a-asset-item>
+            <a-asset-item id="people" src="models-gltf/Collection of people x 5 12.obj"></a-asset-item>
             
 
             <img id="logo" src="../exhibit/exhibit-assets/logo-wall.png">
@@ -37,6 +38,7 @@
             <img id="pixel-lights" src="../exhibit/exhibit-assets/pixel-lights.png">
             <img id="side-light-pixels" src="../exhibit/exhibit-assets/side-light-pixels.png">
             <img id="floor-decal" src="../exhibit/exhibit-assets/floor-decal.png">
+            <img id="stand-here-2" src="../exhibit/exhibit-assets/stand-here-2.png">
 
 
             <a-asset-item id="pixel" src="up"></a-asset-item>
@@ -55,6 +57,8 @@
         <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0" material="src: #concrete"></a-plane>
 
         <a-plane id="floor-decal" position="6.05908 0.01636 -16.28709" width="3" scale="3 9 3" rotation="-90 -32.4 0" src="#floor-decal" material="opacity: 0.99"></a-plane>
+
+        <a-plane id="stand-here-2" position="-0.42704 0.03713 -19.87534" width="3" scale="2.04 4.18 1" rotation="-90 90 0" src="#stand-here-2" material="opacity: 0.99"></a-plane>
 
         <a-plane material="color: #ffffe3" src="#logo" position="1.30762 1.51529 -9.40008" scale="2.6 3 2.6"></a-plane>
 
@@ -83,9 +87,14 @@
 
        <a-plane material="color: #ffffe3" src="#pixel-lights" position="-2.58275 1.26637 -19.83196" scale="6.06 2.5 6" geometry="width: 0.98" rotation="0 90 0"></a-plane>
 
-       <a-plane material="color: #ffffe3" src="#side-light-pixels" position="-2.88519 1.26496 -22.80262" scale="0.7 2.5 1" geometry="width: 0.98" rotation="0 180 0"></a-plane>
+
+       <a-plane src="#side-light-pixels" position="-2.88519 1.26496 -22.80262" scale="0.7 2.5 1" geometry="width: 0.98" rotation="0 180 0"></a-plane>
 
        <a-plane material="color: #ffffe3" src="#side-light-pixels" position="-2.92476 1.26496 -16.85955" scale="0.7 2.5 1" geometry="width: 0.98"></a-plane>
+
+       <a-box id="back-3" position="-1.03025 1.5 -15.76247" height="3" width="8.140" depth="0.09" rotation="0 180 0" color="#ffffe3" material="color: #ffb13b" geometry="depth: 0.03; width: 6.01"></a-box>
+
+       <a-box id="back-4" position="-1.03025 1.5 -23.79155" height="3" width="8.140" depth="0.09" rotation="0 180 0" color="#ffffe3" material="color: #ffb13b" geometry="depth: 0.03; width: 6.01"></a-box>
 
 
 
@@ -135,7 +144,17 @@
 
         <a-gltf-model src="#table" position="4.36762 0.31967 -21.78786" gltf-model="models-gltf/table_model/scene.gltf" rotation="0 89.634 0"></a-gltf-model>
 
-        <a-gltf-model id="stool" src="#stool" position="4.36762 0.31967 -21.78786" gltf-model=models-gltf/stool/scene.gltf" rotation="0 89.634 0"></a-gltf-model>
+        <a-gltf-model id="stool" src="#stool" position="6.87564 0.02332 -20.44197" gltf-model="models-gltf/stool/scene.gltf" rotation="0 89.634 0" scale="0.015 0.015 0.015"></a-gltf-model>
+
+        <a-gltf-model id="stool" src="#stool" position="5.17772 0.02332 -20.52718" gltf-model="models-gltf/stool/scene.gltf" rotation="0 122.43400000000001 0" scale="0.015 0.015 0.015"></a-gltf-model>
+
+        <a-gltf-model id="stool" src="#stool" position="7.63825 0.02332 -20.79606" gltf-model="models-gltf/stool/scene.gltf" rotation="0 104.034 0" scale="0.015 0.015 0.015"></a-gltf-model>
+
+        <a-gltf-model id="stool" src="#stool" position="9.42298 0.02332 -21.57653" gltf-model="models-gltf/stool/scene.gltf" rotation="0 89.634 0" scale="0.015 0.015 0.015"></a-gltf-model>
+
+        <a-gltf-model id="stool" src="#stool" position="3.16878 0.02332 -21.68864" gltf-model="models-gltf/stool/scene.gltf" rotation="0 89.634 0" scale="0.015 0.015 0.015"></a-gltf-model>
+
+        <a-obj-model id="people" src="#people" position="-1.1359 0.02331 -19.72864" rotation="0 -90 0" scale="24 24 24"></a-obj-model>
 
        <!-- <a-gltf-model src="#bench" position="8.66294 0.21525 -16.42923" gltf-model="models-gltf/gallery_bench/scene.gltf" rotation="0 25.5040 0" scale="1.5 1.5 1.5"></a-gltf-model> -->
 
@@ -204,7 +223,8 @@
 
         <a-box id="doorway wall" position="2.26389 1.5 -22.37" height="3" width="2.86" depth="0.09" rotation="0 90 0" color="#ffffe3" geometry="depth: 0.6"></a-box>
 
-        <!-- <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0" color="#A9A9A9"></a-plane> -->
+        
+
 
        <a-sky color="#222222"></a-sky>
 
