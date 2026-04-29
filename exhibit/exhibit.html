@@ -1,15 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Pixel Exploration: Susan Kare and the Design Revolution</title>
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-blink-controls/dist/aframe-blink-controls.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #startOverlay {
+            position: fixed;
+            inset: 0;
+            background: #ffb13b;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            text-align: center;
+        }
+
+        #startOverlay h1 {
+            margin-bottom: 12px;
+            font-size: 2rem;
+        }
+
+        #startOverlay p {
+            margin-bottom: 24px;
+            max-width: 500px;
+            padding: 0 20px;
+            line-height: 1.5;
+        }
+
+        #startButton {
+            padding: 14px 24px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #startOverlay.hidden {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+
+    <div id="startOverlay">
+        <h1>Welcome</h1>
+        <p>Click below to start the experience and enable sound.</p>
+        <button id="startButton">Start Experience</button>
+    </div>
+
     <a-scene>
 
         <assets>
@@ -21,7 +75,7 @@
             <a-asset-item id="bench" src="models-gltf/gallery_bench/scene.gltf"></a-asset-item>
             <a-asset-item id="stool" src="models-gltf/stool/scene.gltf"></a-asset-item>
             <a-asset-item id="people" src="models-gltf/Collection of people x 5 12.obj"></a-asset-item>
-            
+
 
             <img id="logo" src="../exhibit/exhibit-assets/logo-wall.png">
             <img id="portrait" src="../exhibit/exhibit-assets/portrait.png">
@@ -40,127 +94,189 @@
             <img id="floor-decal" src="../exhibit/exhibit-assets/floor-decal.png">
             <img id="stand-here-2" src="../exhibit/exhibit-assets/stand-here-2.png">
 
+            <video id="logo-loop" autoplay="true" loop="true" src="../exhibit/exhibit-assets/pixel-exhibit.mp4"></video>
+
 
             <a-asset-item id="pixel" src="up"></a-asset-item>
+
+            <audio id="ambient" src="exhibit-assets/freesound_community-crowd-of-people-talking-29054.mp3"
+                preload="auto"></audio>
         </assets>
 
 
-       <a-entity id="player" >
+        <a-entity id="player">
             <!-- camera -->
             <a-entity id="camera" position="0 1.6 0" camera wasd-controls look-controls></a-entity>
             <!-- hand controls -->
-            <a-entity id="left-hand" raycaster="objects: .floor" oculus-touch-controls="hand: left" blink-controls></a-entity>
-            <a-entity id="right-hand" raycaster="objects: .floor" oculus-touch-controls="hand: right" blink-controls></a-entity>
+            <a-entity id="left-hand" raycaster="objects: .floor" oculus-touch-controls="hand: left"
+                blink-controls></a-entity>
+            <a-entity id="right-hand" raycaster="objects: .floor" oculus-touch-controls="hand: right"
+                blink-controls></a-entity>
         </a-entity>
 
-       
-        <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0" material="src: #concrete"></a-plane>
 
-        <a-plane id="floor-decal" position="6.05908 0.01636 -16.28709" width="3" scale="3 9 3" rotation="-90 -32.4 0" src="#floor-decal" material="opacity: 0.99"></a-plane>
+        <a-plane class="floor" id="floor" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1"
+            rotation="-90 0 0" material="src: #concrete"></a-plane>
 
-        <a-plane id="stand-here-2" position="-0.42704 0.03713 -19.87534" width="3" scale="2.04 4.18 1" rotation="-90 90 0" src="#stand-here-2" material="opacity: 0.99"></a-plane>
+        <a-plane id="floor-decal" position="6.05908 0.01636 -16.28709" width="3" scale="3 9 3" rotation="-90 -32.4 0"
+            src="#floor-decal" material="opacity: 0.99"></a-plane>
 
-        <a-plane material="color: #ffffe3" src="#logo" position="1.30762 1.51529 -9.40008" scale="2.6 3 2.6"></a-plane>
+        <a-plane id="stand-here-2" position="-0.42704 0.03713 -19.87534" width="3" scale="2.04 4.18 1"
+            rotation="-90 90 0" src="#stand-here-2" material="opacity: 0.99"></a-plane>
 
-        <a-plane material="color: #ffffe3" src="#portrait" position="-0.98774 1.50309 -7.65249" scale="4 3 4" rotation="0 59.99999999999999 0"></a-plane>
 
-        <a-plane material="color: #ffffe3" src="#thesis" position="3.97538 1.39677 -6.04685" scale="4.5 3 2.6" rotation="0 180 0"></a-plane>
 
-        <a-plane material="color: #ffffe3" src="#who+apple" position="6.32903 1.51041 -9.70979" scale="7.5 3 7.5" rotation="0 -90 0"></a-plane>
+        <a-video src="#logo-loop" position="1.30762 1.51529 -9.40008" scale="2.6 3 2.6"></a-video>
 
-        <a-plane material="color: #ffffe3" src="#philosophy" position="9.72804 1.51293 -14.98256" scale="7.5 3 7.5" rotation="0 -155.54944701109156 0"></a-plane>
+        <a-sound src="#ambient" position="1.30762 1.51529 -9.40008"
+            sound="autoplay: false; positional: false; loop: true; volume: 0.5;"></a-sound>
 
-        <a-plane class="floor" static-body="shape:plane" position="4.333 0.015 -14.55" width="17.67" scale="1.01 21.18 1" rotation="-90 0 0" material="color:white; src: #concrete">
+
+
+        <a-plane material="color: #ffffe3" src="#portrait" position="-0.98774 1.50309 -7.65249" scale="4 3 4"
+            rotation="0 59.99999999999999 0"></a-plane>
+
+        <a-plane material="color: #ffffe3" src="#thesis" position="3.97538 1.39677 -6.04685" scale="4.5 3 2.6"
+            rotation="0 180 0"></a-plane>
+
+        <a-plane material="color: #ffffe3" src="#who+apple" position="6.32903 1.51041 -9.70979" scale="7.5 3 7.5"
+            rotation="0 -90 0"></a-plane>
+
+        <a-plane material="color: #ffffe3" src="#philosophy" position="9.72804 1.51293 -14.98256" scale="7.5 3 7.5"
+            rotation="0 -155.54944701109156 0"></a-plane>
+
+        <a-plane class="floor" static-body="shape:plane" position="4.333 0.015 -14.55" width="17.67"
+            scale="1.01 21.18 1" rotation="-90 0 0" material="color:white; src: #concrete">
         </a-plane>
 
-        <a-plane material="color: #ffffe3" src="#icons" position="2.56468 1.49585 -14.21822" scale="7.5 3 7.5" rotation="0 90 0" geometry="width: 1.27"></a-plane>
+        <a-plane material="color: #ffffe3" src="#icons" position="2.56468 1.49585 -14.21822" scale="7.5 3 7.5"
+            rotation="0 90 0" geometry="width: 1.27"></a-plane>
 
-        <a-plane material="color: #ffffe3" src="#icons-2" position="2.56818 1.49457 -22.37474" scale="7.5 3 7.5" rotation="0 90 0" geometry="width: 0.38"></a-plane>
+        <a-plane material="color: #ffffe3" src="#icons-2" position="2.56818 1.49457 -22.37474" scale="7.5 3 7.5"
+            rotation="0 90 0" geometry="width: 0.38"></a-plane>
 
-        <a-plane material="color: #ffffe3" src="#face-1" position="4.02919 1.49457 -23.78191" scale="7.5 3 7.5" geometry="width: 0.38"></a-plane>
+        <a-plane material="color: #ffffe3" src="#face-1" position="4.02919 1.49457 -23.78191" scale="7.5 3 7.5"
+            geometry="width: 0.38"></a-plane>
 
-        <a-plane material="color: #ffffe3" src="#face-2" position="11.52593 1.49457 -23.78191" scale="7.5 3 7.5" geometry="width: 0.38"></a-plane>
+        <a-plane material="color: #ffffe3" src="#face-2" position="11.52593 1.49457 -23.78191" scale="7.5 3 7.5"
+            geometry="width: 0.38"></a-plane>
 
-        <a-plane material="color: #ffffe3" src="#grab-a-grid" position="7.70271 1.49457 -23.7964" scale="7.5 3 7.5" geometry="width: 0.6"></a-plane>
+        <a-plane material="color: #ffffe3" src="#grab-a-grid" position="7.70271 1.49457 -23.7964" scale="7.5 3 7.5"
+            geometry="width: 0.6"></a-plane>
 
-        <a-plane material="color: #ffffe3" src="#how-to" position="12.96098 1.49457 -20.13302" scale="7.5 3 7.5" geometry="width: 0.98" rotation="0 -90 0"></a-plane>
+        <a-plane material="color: #ffffe3" src="#how-to" position="12.96098 1.49457 -20.13302" scale="7.5 3 7.5"
+            geometry="width: 0.98" rotation="0 -90 0"></a-plane>
 
-       <a-plane material="color: #ffffe3" src="#pixel-lights" position="-2.58275 1.26637 -19.83196" scale="6.06 2.5 6" geometry="width: 0.98" rotation="0 90 0"></a-plane>
-
-
-       <a-plane src="#side-light-pixels" position="-2.88519 1.26496 -22.80262" scale="0.7 2.5 1" geometry="width: 0.98" rotation="0 180 0"></a-plane>
-
-       <a-plane material="color: #ffffe3" src="#side-light-pixels" position="-2.92476 1.26496 -16.85955" scale="0.7 2.5 1" geometry="width: 0.98"></a-plane>
-
-       <a-box id="back-3" position="-1.03025 1.5 -15.76247" height="3" width="8.140" depth="0.09" rotation="0 180 0" color="#ffffe3" material="color: #ffb13b" geometry="depth: 0.03; width: 6.01"></a-box>
-
-       <a-box id="back-4" position="-1.03025 1.5 -23.79155" height="3" width="8.140" depth="0.09" rotation="0 180 0" color="#ffffe3" material="color: #ffb13b" geometry="depth: 0.03; width: 6.01"></a-box>
+        <a-plane material="color: #ffffe3" src="#pixel-lights" position="-2.58275 1.26637 -19.83196" scale="6.06 2.5 6"
+            geometry="width: 0.98" rotation="0 90 0"></a-plane>
 
 
+        <a-plane src="#side-light-pixels" position="-2.88519 1.26496 -22.80262" scale="0.7 2.5 1" geometry="width: 0.98"
+            rotation="0 180 0"></a-plane>
 
+        <a-plane material="color: #ffffe3" src="#side-light-pixels" position="-2.92476 1.26496 -16.85955"
+            scale="0.7 2.5 1" geometry="width: 0.98"></a-plane>
 
-        
+        <a-box id="back-3" position="-1.03025 1.5 -15.76247" height="3" width="8.140" depth="0.09" rotation="0 180 0"
+            color="#ffffe3" material="color: #ffb13b" geometry="depth: 0.03; width: 6.01"></a-box>
 
-        <a-box id="ceiling-1" position="-0.25736 3.02036 -5.04019" height="3" width="2" depth="0.09" rotation="-90 0 0" color="#ffffe3" geometry="height: 2.05; width: 3.6"></a-box>
-
-        <a-box id="ceiling-2" position="4.44147 3.01447 -14.94049" height="3" width="2" depth="0.09" rotation="-90 0 0" color=#ffffe3 geometry="depth: 0.07; height: 17.84; width: 4.02"></a-box>
-
-        <a-box id="ceiling-3" position="9.86411 3.01966 -18.618" height="3" width="2" depth="0.09" rotation="-90 0 0" color=#ffffe3 geometry="depth: 0.07; height: 10.57; width: 6.84"></a-box>
-
-        <a-box id="ceiling-4" position="-0.96432 3.01966 -19.79047" height="3" width="2" depth="0.09" rotation="-90 0 0" color=#ffffe3 geometry="depth: 0.07; height: 8.37; width: 6.84"></a-box>
-
-        <a-box id="ceiling-5" position="0.20568 3.02203 -7.81707" height="3" width="2" depth="0.09" rotation="-90 0 0" color="#ffffe3" geometry="height: 3.71; width: 4.49"></a-box>
-
-        <a-box id="doorway wall-2" position="2.27024 2.86592 -19.99052" height="3" width="2.86" depth="0.09" rotation="0 89.79 0" color="#ffffe3" geometry="depth: 0.6; height: 0.28; width: 2.04"></a-box> 
-         
-
-        <a-box id="long room wall back-2" position="-2.89659 1.25064 -19.83552" height="3" width="8.140" depth="0.09" rotation="0 90 0" color="white" geometry="depth: 0.62; height: 2.52; width: 5.92"></a-box>
-
-        <a-box id="long room wall back-3" position="-3.97846 1.5 -19.8" height="3" width="8.140" depth="0.09" rotation="0 90 0" color="#ffffe3" material="color: #ffb13b"></a-box>
-
-        <a-box id="color-side" position="2.26114 1.36935 -18.99591" height="3" width="6.8" depth="0.09" color="#ffffe3" material="color: #ffb13b" geometry="depth: 0; height: 2.7; width: 0.598"></a-box>
-
-        <a-box id="color-side-2" position="2.26114 1.36935 -20.93227" height="3" width="6.8" depth="0.09" color="#ffffe3" material="color: #ffb13b" geometry="depth: 0; height: 2.7; width: 0.598" rotation="0 180 0"></a-box>
-
-       <a-gltf-model src="#pixel-girl" position="11.61788 1.66342 -15.91489" scale="0.015 0.015 0.015" gltf-model="models-gltf/pixel-girl.gltf" rotation="0 161.40507567732857 0"></a-gltf-model>
-
-        <a-gltf-model src="#pixel" position="10.39546 1.66342 -15.34757" scale="0.015 0.015 0.015" gltf-model="models-gltf/pixel-3d-test.gltf" rotation="0 160.3244772757118 0"></a-gltf-model>
-
-        <a-gltf-model src="#table" position="6.26603 0.31967 -21.77644" gltf-model="models-gltf/table_model/scene.gltf" rotation="0 89.634 0"></a-gltf-model>
-
-        <a-gltf-model src="#paper-stack" position="2.67882 0.31563 -22.30279" gltf-model="models-gltf/office_paper/scene.gltf" rotation="0 12.33 0"></a-gltf-model>
-
-        <a-gltf-model src="#paper-stack" position="9.27306 0.31563 -25.2814" gltf-model="models-gltf/office_paper/scene.gltf" rotation="0 -83.17 0"></a-gltf-model>
-
-        <a-gltf-model src="#pencil" position="5.68973 0.89105 -21.61982" gltf-model="models-gltf/low_poly_pencil/scene.gltf" rotation="0 12.33 0"></a-gltf-model>
-
-        <a-gltf-model src="#pencil" position="8.10761 0.89105 -22.15077" gltf-model="models-gltf/low_poly_pencil/scene.gltf" rotation="0 -26.07 0"></a-gltf-model>
-
-        <a-gltf-model src="#pencil" position="6.61344 0.89105 -21.71869" gltf-model="models-gltf/low_poly_pencil/scene.gltf" rotation="0 -69.67 0"></a-gltf-model>
-
-        <a-gltf-model src="#pencil" position="5.32939 0.89105 -21.86405" gltf-model="models-gltf/low_poly_pencil/scene.gltf" rotation="0 42.26 0"></a-gltf-model>
-
-        <a-gltf-model src="#table" position="8.17192 0.31967 -21.76309" gltf-model="models-gltf/table_model/scene.gltf" rotation="0 89.634 0"></a-gltf-model>
-
-        <a-gltf-model src="#table" position="4.36762 0.31967 -21.78786" gltf-model="models-gltf/table_model/scene.gltf" rotation="0 89.634 0"></a-gltf-model>
-
-        <a-gltf-model id="stool" src="#stool" position="6.87564 0.02332 -20.44197" gltf-model="models-gltf/stool/scene.gltf" rotation="0 89.634 0" scale="0.015 0.015 0.015"></a-gltf-model>
-
-        <a-gltf-model id="stool" src="#stool" position="5.17772 0.02332 -20.52718" gltf-model="models-gltf/stool/scene.gltf" rotation="0 122.43400000000001 0" scale="0.015 0.015 0.015"></a-gltf-model>
-
-        <a-gltf-model id="stool" src="#stool" position="7.63825 0.02332 -20.79606" gltf-model="models-gltf/stool/scene.gltf" rotation="0 104.034 0" scale="0.015 0.015 0.015"></a-gltf-model>
-
-        <a-gltf-model id="stool" src="#stool" position="9.42298 0.02332 -21.57653" gltf-model="models-gltf/stool/scene.gltf" rotation="0 89.634 0" scale="0.015 0.015 0.015"></a-gltf-model>
-
-        <a-gltf-model id="stool" src="#stool" position="3.16878 0.02332 -21.68864" gltf-model="models-gltf/stool/scene.gltf" rotation="0 89.634 0" scale="0.015 0.015 0.015"></a-gltf-model>
-
-        <a-obj-model id="people" src="#people" position="-1.1359 0.02331 -19.72864" rotation="0 -90 0" scale="24 24 24"></a-obj-model>
-
-       <!-- <a-gltf-model src="#bench" position="8.66294 0.21525 -16.42923" gltf-model="models-gltf/gallery_bench/scene.gltf" rotation="0 25.5040 0" scale="1.5 1.5 1.5"></a-gltf-model> -->
+        <a-box id="back-4" position="-1.03025 1.5 -23.79155" height="3" width="8.140" depth="0.09" rotation="0 180 0"
+            color="#ffffe3" material="color: #ffb13b" geometry="depth: 0.03; width: 6.01"></a-box>
 
 
 
-      
+
+
+
+        <a-box id="ceiling-1" position="-0.25736 3.02036 -5.04019" height="3" width="2" depth="0.09" rotation="-90 0 0"
+            color="#ffffe3" geometry="height: 2.05; width: 3.6"></a-box>
+
+        <a-box id="ceiling-2" position="4.44147 3.01447 -14.94049" height="3" width="2" depth="0.09" rotation="-90 0 0"
+            color=#ffffe3 geometry="depth: 0.07; height: 17.84; width: 4.02"></a-box>
+
+        <a-box id="ceiling-3" position="9.86411 3.01966 -18.618" height="3" width="2" depth="0.09" rotation="-90 0 0"
+            color=#ffffe3 geometry="depth: 0.07; height: 10.57; width: 6.84"></a-box>
+
+        <a-box id="ceiling-4" position="-0.96432 3.01966 -19.79047" height="3" width="2" depth="0.09" rotation="-90 0 0"
+            color=#ffffe3 geometry="depth: 0.07; height: 8.37; width: 6.84"></a-box>
+
+        <a-box id="ceiling-5" position="0.20568 3.02203 -7.81707" height="3" width="2" depth="0.09" rotation="-90 0 0"
+            color="#ffffe3" geometry="height: 3.71; width: 4.49"></a-box>
+
+        <a-box id="doorway wall-2" position="2.27024 2.86592 -19.99052" height="3" width="2.86" depth="0.09"
+            rotation="0 89.79 0" color="#ffffe3" geometry="depth: 0.6; height: 0.28; width: 2.04"></a-box>
+
+
+        <a-box id="long room wall back-2" position="-2.89659 1.25064 -19.83552" height="3" width="8.140" depth="0.09"
+            rotation="0 90 0" color="white" geometry="depth: 0.62; height: 2.52; width: 5.92"></a-box>
+
+        <a-box id="long room wall back-3" position="-3.97846 1.5 -19.8" height="3" width="8.140" depth="0.09"
+            rotation="0 90 0" color="#ffffe3" material="color: #ffb13b"></a-box>
+
+        <a-box id="color-side" position="2.26114 1.36935 -18.99591" height="3" width="6.8" depth="0.09" color="#ffffe3"
+            material="color: #ffb13b" geometry="depth: 0; height: 2.7; width: 0.598"></a-box>
+
+        <a-box id="color-side-2" position="2.26114 1.36935 -20.93227" height="3" width="6.8" depth="0.09"
+            color="#ffffe3" material="color: #ffb13b" geometry="depth: 0; height: 2.7; width: 0.598"
+            rotation="0 180 0"></a-box>
+
+        <a-gltf-model src="#pixel-girl" position="11.61788 1.66342 -15.91489" scale="0.015 0.015 0.015"
+            gltf-model="models-gltf/pixel-girl.gltf" rotation="0 161.40507567732857 0"></a-gltf-model>
+
+        <a-gltf-model src="#pixel" position="10.39546 1.66342 -15.34757" scale="0.015 0.015 0.015"
+            gltf-model="models-gltf/pixel-3d-test.gltf" rotation="0 160.3244772757118 0"></a-gltf-model>
+
+        <a-gltf-model src="#table" position="6.26603 0.31967 -21.77644" gltf-model="models-gltf/table_model/scene.gltf"
+            rotation="0 89.634 0"></a-gltf-model>
+
+        <a-gltf-model src="#paper-stack" position="2.67882 0.31563 -22.30279"
+            gltf-model="models-gltf/office_paper/scene.gltf" rotation="0 12.33 0"></a-gltf-model>
+
+        <a-gltf-model src="#paper-stack" position="9.27306 0.31563 -25.2814"
+            gltf-model="models-gltf/office_paper/scene.gltf" rotation="0 -83.17 0"></a-gltf-model>
+
+        <a-gltf-model src="#pencil" position="5.68973 0.89105 -21.61982"
+            gltf-model="models-gltf/low_poly_pencil/scene.gltf" rotation="0 12.33 0"></a-gltf-model>
+
+        <a-gltf-model src="#pencil" position="8.10761 0.89105 -22.15077"
+            gltf-model="models-gltf/low_poly_pencil/scene.gltf" rotation="0 -26.07 0"></a-gltf-model>
+
+        <a-gltf-model src="#pencil" position="6.61344 0.89105 -21.71869"
+            gltf-model="models-gltf/low_poly_pencil/scene.gltf" rotation="0 -69.67 0"></a-gltf-model>
+
+        <a-gltf-model src="#pencil" position="5.32939 0.89105 -21.86405"
+            gltf-model="models-gltf/low_poly_pencil/scene.gltf" rotation="0 42.26 0"></a-gltf-model>
+
+        <a-gltf-model src="#table" position="8.17192 0.31967 -21.76309" gltf-model="models-gltf/table_model/scene.gltf"
+            rotation="0 89.634 0"></a-gltf-model>
+
+        <a-gltf-model src="#table" position="4.36762 0.31967 -21.78786" gltf-model="models-gltf/table_model/scene.gltf"
+            rotation="0 89.634 0"></a-gltf-model>
+
+        <a-gltf-model id="stool" src="#stool" position="6.87564 0.02332 -20.44197"
+            gltf-model="models-gltf/stool/scene.gltf" rotation="0 89.634 0" scale="0.015 0.015 0.015"></a-gltf-model>
+
+        <a-gltf-model id="stool" src="#stool" position="5.17772 0.02332 -20.52718"
+            gltf-model="models-gltf/stool/scene.gltf" rotation="0 122.43400000000001 0"
+            scale="0.015 0.015 0.015"></a-gltf-model>
+
+        <a-gltf-model id="stool" src="#stool" position="7.63825 0.02332 -20.79606"
+            gltf-model="models-gltf/stool/scene.gltf" rotation="0 104.034 0" scale="0.015 0.015 0.015"></a-gltf-model>
+
+        <a-gltf-model id="stool" src="#stool" position="9.42298 0.02332 -21.57653"
+            gltf-model="models-gltf/stool/scene.gltf" rotation="0 89.634 0" scale="0.015 0.015 0.015"></a-gltf-model>
+
+        <a-gltf-model id="stool" src="#stool" position="3.16878 0.02332 -21.68864"
+            gltf-model="models-gltf/stool/scene.gltf" rotation="0 89.634 0" scale="0.015 0.015 0.015"></a-gltf-model>
+
+        <a-obj-model id="people" src="#people" position="-1.1359 0.02331 -19.72864" rotation="0 -90 0"
+            scale="24 24 24"></a-obj-model>
+
+        <!-- <a-gltf-model src="#bench" position="8.66294 0.21525 -16.42923" gltf-model="models-gltf/gallery_bench/scene.gltf" rotation="0 25.5040 0" scale="1.5 1.5 1.5"></a-gltf-model> -->
+
+
+
+
 
 
 
@@ -168,68 +284,114 @@
 
 
         <a-light type="ambient" intensity="1" position="4.66969 3.28035 -10.14982"></a-light>
-        <a-light type="point" intensity="1" position="4.97204 1.51449 -7.82214" light="color: #fff2d5; intensity: 1.15"></a-light>
-        <a-light type="point" intensity="1" position="3.94831 1.51449 -7.82214" light="color: #fff2d5; intensity: 1.15"></a-light>
-        <a-light type="point" intensity="1" position="0.99488 1.88234 -8.57402" light="color: #fff2d5; intensity: 1.59"></a-light>
-        <a-light type="point" intensity="1" position="-0.76273 1.85537 -6.72041" light="color: #fefcdd; intensity: 3.49"></a-light>
-        <a-light type="point" intensity="1" position="5.30478 1.79463 -12.23278" light="color: #fff2d5; intensity: 1.48"></a-light>
-        <a-light type="point" intensity="1" position="3.54874 1.74602 -15.10691" light="color: #fff2d5; intensity: 1.48"></a-light>
-        <a-light type="point" intensity="1" position="10.52312 1.79463 -16.21767" light="color: #fff2d5; intensity: 1.48"></a-light>
-        <a-light type="point" intensity="1" position="7.6491 1.65034 -15.29554" light="color: #fff2d5; intensity: 1.48"></a-light>
-       <a-light id="interactive" type="point" intensity="1" position="-1.89934 1.77975 -19.43151" light="color: #fff2d5; intensity: 1.48"></a-light>
+        <a-light type="point" intensity="1" position="4.97204 1.51449 -7.82214"
+            light="color: #fff2d5; intensity: 1.15"></a-light>
+        <a-light type="point" intensity="1" position="3.94831 1.51449 -7.82214"
+            light="color: #fff2d5; intensity: 1.15"></a-light>
+        <a-light type="point" intensity="1" position="0.99488 1.88234 -8.57402"
+            light="color: #fff2d5; intensity: 1.59"></a-light>
+        <a-light type="point" intensity="1" position="-0.76273 1.85537 -6.72041"
+            light="color: #fefcdd; intensity: 3.49"></a-light>
+        <a-light type="point" intensity="1" position="5.30478 1.79463 -12.23278"
+            light="color: #fff2d5; intensity: 1.48"></a-light>
+        <a-light type="point" intensity="1" position="3.54874 1.74602 -15.10691"
+            light="color: #fff2d5; intensity: 1.48"></a-light>
+        <a-light type="point" intensity="1" position="10.52312 1.79463 -16.21767"
+            light="color: #fff2d5; intensity: 1.48"></a-light>
+        <a-light type="point" intensity="1" position="7.6491 1.65034 -15.29554"
+            light="color: #fff2d5; intensity: 1.48"></a-light>
+        <a-light id="interactive" type="point" intensity="1" position="-1.89934 1.77975 -19.43151"
+            light="color: #fff2d5; intensity: 1.48"></a-light>
 
-       <a-light id="interactive-2" type="point" intensity="1" position="-1.89934 1.77975 -22.01863" light="color: #fff2d5; intensity: 1.48"></a-light>
+        <a-light id="interactive-2" type="point" intensity="1" position="-1.89934 1.77975 -22.01863"
+            light="color: #fff2d5; intensity: 1.48"></a-light>
 
-       <a-light id="interactive-3" type="point" intensity="1" position="-1.89934 1.77975 -17.59699" light="color: #fff2d5; intensity: 1.48"></a-light>
+        <a-light id="interactive-3" type="point" intensity="1" position="-1.89934 1.77975 -17.59699"
+            light="color: #fff2d5; intensity: 1.48"></a-light>
 
-       <a-light type="point" intensity="1" position="7.60712 1.74602 -22.1291" light="color: #fff2d5; intensity: 1.48"></a-light>
+        <a-light type="point" intensity="1" position="7.60712 1.74602 -22.1291"
+            light="color: #fff2d5; intensity: 1.48"></a-light>
 
-       <a-light type="point" intensity="1" position="11.71819 1.74602 -21.8111" light="color: #fff2d5; intensity: 1.48"></a-light>
-
-
-       <a-light type="point" intensity="1" position="11.71819 1.74602 -18.27696" light="color: #fff2d5; intensity: 1.48"></a-light>
-
-       <a-light type="point" intensity="1" position="4.66054 1.75645 -21.64728" light="color: #fff2d5; intensity: 1.48"></a-light>
-
-       
-
-
-
-        
-
-        <a-box id="entrance wall left" position="-2 1.5 -5" height="3" width="2" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
-    
-        <a-box id="entrance wall right" position="1.48947 1.5 -5" height="3" width="2" depth="0.09" rotation="0 90 0" color="#ffffe3"></a-box>
-
-        <a-box id="portrait wall" position="-0.992 1.5 -7.74" height="3" width="4" depth="0.09" rotation="0 -120 0" color=#ffffe3></a-box>
-
-        <a-box id="logo wall" position="1.26 1.5 -9.45" height="3" width="2.6" depth="0.09" rotation="0 0 0" color=#ffffe3></a-box>
-
-        <a-box id="thesis wall" position="3.95 1.5 -6" height="3" width="5" depth="0.09" rotation="0 0 0" color=#ffffe3></a-box>
-
-        <a-box id="large wall 1" position="6.4 1.5 -9.68" height="3" width="7.45" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
-
-        <a-box id="icon work wall" position="2.25938 1.5 -14.2" height="3" width="9.58" depth="0.09" rotation="0 90 0" color="#ffffe3" geometry="depth: 0.6"></a-box>
-
-        <a-box id="philosophy wall" position="9.736 1.5 -14.91" height="3" width="7.34" depth="0.09" rotation="0 24.468 0" color=#ffffe3></a-box>
-
-        <a-box id="interface wall 1" position="13.027 1.5 -20.13" height="3" width="7.38" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
-
-        <a-box id="north wall" position="4.371 1.5 -23.85" height="3" width="17.3" depth="0.09" rotation="0 0 0" color=#ffffe3></a-box>
-
-        <a-box id="long room wall back" position="-4.274 1.5 -19.80" height="3" width="8.140" depth="0.09" rotation="0 90 0" color=#ffffe3></a-box>
-
-        <a-box id="room wall south" position="-0.888 1.5 -15.73" height="3" width="6.8" depth="0.09" rotation="0 0 0" color=#ffffe3></a-box>
-
-        <a-box id="doorway wall" position="2.26389 1.5 -22.37" height="3" width="2.86" depth="0.09" rotation="0 90 0" color="#ffffe3" geometry="depth: 0.6"></a-box>
-
-        
+        <a-light type="point" intensity="1" position="11.71819 1.74602 -21.8111"
+            light="color: #fff2d5; intensity: 1.48"></a-light>
 
 
-       <a-sky color="#222222"></a-sky>
+        <a-light type="point" intensity="1" position="11.71819 1.74602 -18.27696"
+            light="color: #fff2d5; intensity: 1.48"></a-light>
+
+        <a-light type="point" intensity="1" position="4.66054 1.75645 -21.64728"
+            light="color: #fff2d5; intensity: 1.48"></a-light>
+
+
+
+
+
+
+
+        <a-box id="entrance wall left" position="-2 1.5 -5" height="3" width="2" depth="0.09" rotation="0 90 0"
+            color=#ffffe3></a-box>
+
+        <a-box id="entrance wall right" position="1.48947 1.5 -5" height="3" width="2" depth="0.09" rotation="0 90 0"
+            color="#ffffe3"></a-box>
+
+        <a-box id="portrait wall" position="-0.992 1.5 -7.74" height="3" width="4" depth="0.09" rotation="0 -120 0"
+            color=#ffffe3></a-box>
+
+        <a-box id="logo wall" position="1.26 1.5 -9.45" height="3" width="2.6" depth="0.09" rotation="0 0 0"
+            color=#ffffe3></a-box>
+
+        <a-box id="thesis wall" position="3.95 1.5 -6" height="3" width="5" depth="0.09" rotation="0 0 0"
+            color=#ffffe3></a-box>
+
+        <a-box id="large wall 1" position="6.4 1.5 -9.68" height="3" width="7.45" depth="0.09" rotation="0 90 0"
+            color=#ffffe3></a-box>
+
+        <a-box id="icon work wall" position="2.25938 1.5 -14.2" height="3" width="9.58" depth="0.09" rotation="0 90 0"
+            color="#ffffe3" geometry="depth: 0.6"></a-box>
+
+        <a-box id="philosophy wall" position="9.736 1.5 -14.91" height="3" width="7.34" depth="0.09"
+            rotation="0 24.468 0" color=#ffffe3></a-box>
+
+        <a-box id="interface wall 1" position="13.027 1.5 -20.13" height="3" width="7.38" depth="0.09" rotation="0 90 0"
+            color=#ffffe3></a-box>
+
+        <a-box id="north wall" position="4.371 1.5 -23.85" height="3" width="17.3" depth="0.09" rotation="0 0 0"
+            color=#ffffe3></a-box>
+
+        <a-box id="long room wall back" position="-4.274 1.5 -19.80" height="3" width="8.140" depth="0.09"
+            rotation="0 90 0" color=#ffffe3></a-box>
+
+        <a-box id="room wall south" position="-0.888 1.5 -15.73" height="3" width="6.8" depth="0.09" rotation="0 0 0"
+            color=#ffffe3></a-box>
+
+        <a-box id="doorway wall" position="2.26389 1.5 -22.37" height="3" width="2.86" depth="0.09" rotation="0 90 0"
+            color="#ffffe3" geometry="depth: 0.6"></a-box>
+
+
+
+
+        <a-sky color="#222222"></a-sky>
 
 
     </a-scene>
 
+    <script>
+        const startButton = document.querySelector('#startButton');
+        const startOverlay = document.querySelector('#startOverlay');
+
+        startButton.addEventListener('click', () => {
+            const sounds = document.querySelectorAll('a-sound');
+
+            sounds.forEach((el) => {
+                if (el.components.sound) {
+                    el.components.sound.playSound();
+                }
+            });
+
+            startOverlay.classList.add('hidden');
+        });
+    </script>
+
 </body>
+
 </html>
